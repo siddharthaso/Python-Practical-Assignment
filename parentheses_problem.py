@@ -54,14 +54,12 @@ def parentheses_combination(n):
 	if n == 0: return ['']
 	ans = []
 	for c in range(n):
-		print("---------------------------------------------c:", c,"----------------------------------------------")
 		for left in parentheses_combination(c):
-			print("-------------------------------------------left :", left,"------------------------------------------------")
 			for right in parentheses_combination(n-1-c):
-				print("-------------------------------------------right :", right,"------------------------------------------------")
 				ans.append('({}){}'.format(left, right))
 	return ans
 
 if __name__=='__main__':
+	[print(j, end=" ") for i in range(2,8) for j in range(i*2, 50, i)]
 	n = int(input("Input : "))
 	print("Output: ",sorted(list(set(parentheses_combination(n)))))
